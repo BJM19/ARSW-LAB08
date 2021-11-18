@@ -128,14 +128,52 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 ![Imágen 3](images/part1/part1-vm-resize.png)
 
 11. Una vez el cambio se vea reflejado, repita el paso 7, 8 y 9.
+
+Respuesta:
+> Respuesta:
+> Consideramos que no se cumple el requerimiento funcional debido a que a pesar de haber hecho un escalamiento horizontal
+> se siguen mostrando errores al momento de realizar la ejecución con los scripts de postman.
 12. Evalue el escenario de calidad asociado al requerimiento no funcional de escalabilidad y concluya si usando este modelo de escalabilidad logramos cumplirlo.
 13. Vuelva a dejar la VM en el tamaño inicial para evitar cobros adicionales.
 
 **Preguntas**
 
 1. ¿Cuántos y cuáles recursos crea Azure junto con la VM?
+
+   > Se crean 4 recursos los cuales son:
+   > * Direcciones IP públicas y privadas
+   > * VNet(Virtual Network)
+   > * NSG (Grupos de seguridad de red)
+   
 2. ¿Brevemente describa para qué sirve cada recurso?
+
+
+> Azure Virtual Network (VNet): Es el bloque de construcción fundamental para su red privada en Azure. VNet permite
+> que muchos tipos de recursos de Azure, como las máquinas virtuales (VM) de Azure, se comuniquen de forma segura entre sí,
+> con Internet y con las redes locales.
+
+
+> IP pública: Permiten que los recursos de Internet se comuniquen con los recursos de Azure.
+
+> IP privada: Permite la comunicación entre recursos en Azure tales como:
+> * Virtual machine network interfaces
+> * Internal load balancers (ILBs)
+> * Application gateways
+> * Virtual network.
+> * Red local a través de una pasarela VPN o un circuito ExpressRoute.
+
+> NSG: Un grupo de seguridad de red contiene reglas de seguridad que permiten o deniegan el tráfico de red entrante hacia,
+> o el tráfico de red saliente desde, varios tipos de recursos de Azure.
+
 3. ¿Al cerrar la conexión ssh con la VM, por qué se cae la aplicación que ejecutamos con el comando `npm FibonacciApp.js`? ¿Por qué debemos crear un *Inbound port rule* antes de acceder al servicio?
+
+
+> Debido a que cuando ejecutamos por ssh todos los procesos quedan asociados a esta connexion, y al momento de cerrarla los procesos
+> iniciados que no tengan una orden que dictamine que sigan en ejecución se cerraran.
+
+> Porque con esta regla permitimos el acceso público a un puerto específico de la máquina virtual, para finalmente ejecutar
+> nuestra aplicación por este puerto y que sea accesible por todos.
+
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
