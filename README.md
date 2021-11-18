@@ -185,17 +185,54 @@ Respuesta:
 
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
 
+
+> ![](./images/part1/8-01.png)
+>
+> ![](./images/part1/8-01-2.png)
+>
 > Consume tanta CPU debido a que se tiene una implementación no eficaz, la cual consume muchos recursos para realizar
 > muchas iteraciones.
 > 
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
     * Si hubo fallos documentelos y explique.
+> Sin aumento de espacio:
+>
+> ![](./images/part1/9-01-2.png)
+>
+> ![](./images/part1/9-02-2.png)
+>
+> Se obtienen fallos de desconexión y los tiempos de ejecución varían entre 21s y 44s
+> Con aumento de espacio:
+>
+> ![](./images/part1/9-01.png)
+>
+> ![](./images/part1/9-02.png)
+>
+> Se siguen obteniendo fallos de desconexión aunque un poco menores y los tiempos disminuyen y varían entre 14s y 30s
+>
 7. ¿Cuál es la diferencia entre los tamaños `B2ms` y `B1ls` (no solo busque especificaciones de infraestructura)?
+
+> Se diferencian en su capacidad en memoria, uno con 0.5Gb y otro con 8Gb respectivamente, además de su gran diferencia en la CPU, ya que
+> B2ms es el doble de B1ls, esto ocasiona que el precio por mes del B2ms sea mucho mayor que el de B1ls.
+
 8. ¿Aumentar el tamaño de la VM es una buena solución en este escenario?, ¿Qué pasa con la FibonacciApp cuando cambiamos el tamaño de la VM?
+
+> No es una buena solución debido a que las pruebas siguen fallando debido a la mala implementación que hay en FibonacciApp,
+> el cambio que se genera es que hay un menor consumo de CPU debido a que esta es más grande,
+
 9. ¿Qué pasa con la infraestructura cuando cambia el tamaño de la VM? ¿Qué efectos negativos implica?
+
+> Cuando se realiza algún tipo de cambio 'físico' en la VM esta debe ser reiniciada por completo, por lo cual
+> cualquier servicio que esta esté prestando se verá afectado debido a que no habrá disponibilidad del mismo
+
 10. ¿Hubo mejora en el consumo de CPU o en los tiempos de respuesta? Si/No ¿Por qué?
+
+> En términos de porcentaje hubo mejora, ya que se redujo el consumo en casi un 40%, pero en tiempo no se aprecia, la diferencia es casi nula.
+
 11. Aumente la cantidad de ejecuciones paralelas del comando de postman a `4`. ¿El comportamiento del sistema es porcentualmente mejor?
+
+> No, debido a que se siguen presentando la misma cantidad de errores al momento de ejecutarlo.
 
 ### Parte 2 - Escalabilidad horizontal
 
