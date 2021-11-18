@@ -50,19 +50,32 @@ Cuando un conjunto de usuarios consulta un enésimo número (superior a 1000000)
 
 7. La función que calcula en enésimo número de la secuencia de Fibonacci está muy mal construido y consume bastante CPU para obtener la respuesta. Usando la consola del Browser documente los tiempos de respuesta para dicho endpoint usando los siguintes valores:
     * 1000000
+   > ![](./images/part1/7-01.png)
     * 1010000
+   > ![](./images/part1/7-02.png)
     * 1020000
+   > ![](./images/part1/7-03.png)
     * 1030000
+   > ![](./images/part1/7-04.png)
     * 1040000
+   > ![](./images/part1/7-05.png)
     * 1050000
+   > ![](./images/part1/7-06.png)
     * 1060000
+   > ![](./images/part1/7-07.png)
     * 1070000
+   > ![](./images/part1/7-08.png)
     * 1080000
-    * 1090000    
+   > ![](./images/part1/7-09.png)
+    * 1090000
+   > ![](./images/part1/7-10.png)
 
 8. Dírijase ahora a Azure y verifique el consumo de CPU para la VM. (Los resultados pueden tardar 5 minutos en aparecer).
 
 ![Imágen 2](images/part1/part1-vm-cpu.png)
+> Revisión:
+>
+> ![](./images/part1/8-01.png)
 
 9. Ahora usaremos Postman para simular una carga concurrente a nuestro sistema. Siga estos pasos.
     * Instale newman con el comando `npm install newman -g`. Para conocer más de Newman consulte el siguiente [enlace](https://learning.getpostman.com/docs/postman/collection-runs/command-line-integration-with-newman/).
