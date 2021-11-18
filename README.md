@@ -175,7 +175,19 @@ Respuesta:
 > nuestra aplicación por este puerto y que sea accesible por todos.
 
 4. Adjunte tabla de tiempos e interprete por qué la función tarda tando tiempo.
+
+> ![](./images/part1/4-1.png)
+>
+> ![](./images/part1/4-2.png)
+>
+> La función tarda tanto tiempo y tiende a ser incremental debido a la cantidad de iteraciones que se realizan
+
+
 5. Adjunte imágen del consumo de CPU de la VM e interprete por qué la función consume esa cantidad de CPU.
+
+> Consume tanta CPU debido a que se tiene una implementación no eficaz, la cual consume muchos recursos para realizar
+> muchas iteraciones.
+> 
 6. Adjunte la imagen del resumen de la ejecución de Postman. Interprete:
     * Tiempos de ejecución de cada petición.
     * Si hubo fallos documentelos y explique.
