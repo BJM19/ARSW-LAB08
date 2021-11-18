@@ -320,16 +320,59 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 
 **Preguntas**
 
-* ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?, ¿Qué es SKU, qué tipos hay y en qué se diferencian?, ¿Por qué el balanceador de carga necesita una IP pública?
+* ¿Cuáles son los tipos de balanceadores de carga en Azure y en qué se diferencian?
+
+> Existen 2 tipos de balanceadores de carga en Azure, el balanceador público y el balanceador privado (interno), se
+> diferencian en que el balanceador público está hecho para dar conexiones de salida para las máquinas virtuales, mientras que
+> el interno se utilizan para realizar el equilibrio de la carga dentro de una red virtual.
+
+* ¿Qué es SKU, qué tipos hay y en qué se diferencian?
+
+> Representa una posibilidad para comprar Existencias (SKU) por debajo de un producto.
+
+* ¿Por qué el balanceador de carga necesita una IP pública?
+
+> Añadir un punto de conexión a los perfiles Traffic Manager
+
 * ¿Cuál es el propósito del *Backend Pool*?
+
+> Define el grupo de recursos que servirá el tráfico para una regla de equilibrio de carga determinada
+
 * ¿Cuál es el propósito del *Health Probe*?
+
+> Permitir que él, Load Balancer detecte el estado del extremo del backend
+
 * ¿Cuál es el propósito de la *Load Balancing Rule*? ¿Qué tipos de sesión persistente existen, por qué esto es importante y cómo puede afectar la escalabilidad del sistema?.
-* ¿Qué es una *Virtual Network*? ¿Qué es una *Subnet*? ¿Para qué sirven los *address space* y *address range*?
+> Definir el tráfico de red atreves de las máquinas virtuales, las sesiones que este permite son sesiones sin definir
+> persistencia o con persistencia definida, esto significa que cuando se realice una misma petition esta será redirigida
+> al cliente original y no a uno nuevo, esto puede afectar a aplicaciones que trabajen con sesiones guardadas en memoria,
+> o en aplicaciones sticky.
+
+* ¿Qué es unaVirtual Network ?
+
+> Es el bloque de creación fundamental de una red privada en Azure
+
+* ¿Qué es una *Subnet*?
+
+> Es un rango de direcciones lógicas, que se utiliza normalmente cuando se tienen redes demasiado grandes, estos son divididas en redes más pequeñas
+
+* ¿Para qué sirven los *address space* y *address range*?
+
+> Los address space son aquellas direcciones de red asignables dentro de una Vnt y los address range son las redes asignables dentro de una subnet.
+
 * ¿Qué son las *Availability Zone* y por qué seleccionamos 3 diferentes zonas?. ¿Qué significa que una IP sea *zone-redundant*?
+
+> Una zona de disponibilidad es una oferta de alta disponibilidad que protege sus aplicaciones y datos de los fallos
+> del centro de datos. Las zonas de disponibilidad son ubicaciones físicas únicas dentro de una región de Azure.
+
 * ¿Cuál es el propósito del *Network Security Group*?
+
+> Utilizar un grupo de seguridad de red de Azure para filtrar el tráfico de red hacia y desde los recursos de Azure
+> en una red virtual de Azure
 * Informe de newman 1 (Punto 2)
 * Presente el Diagrama de Despliegue de la solución.
 
+> ![](./images/part2/diagrama.png)
 
 
 
