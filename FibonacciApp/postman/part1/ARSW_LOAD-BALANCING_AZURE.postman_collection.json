@@ -23,12 +23,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{VM1}}:3000/fibonacci/{{nth}}",
+					"raw": "http://{{VM1}}/fibonacci/{{nth}}",
 					"protocol": "http",
 					"host": [
 						"{{VM1}}"
 					],
-					"port": "3000",
+					"port": "80",
 					"path": [
 						"fibonacci",
 						"{{nth}}"

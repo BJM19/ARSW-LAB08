@@ -307,16 +307,28 @@ http://52.155.223.248/
 http://52.155.223.248/fibonacci/1
 ```
 
+![](./images/part2/parte2-1.png)
+
+![](./images/part2/parte2-2.png)
+
 2. Realice las pruebas de carga con `newman` que se realizaron en la parte 1 y haga un informe comparativo donde contraste: tiempos de respuesta, cantidad de peticiones respondidas con éxito, costos de las 2 infraestrucruras, es decir, la que desarrollamos con balanceo de carga horizontal y la que se hizo con una maquina virtual escalada.
+   
+![](./images/part2/parte2-3.png)
 
-3. Agregue una 4 maquina virtual y realice las pruebas de newman, pero esta vez no lance 2 peticiones en paralelo, sino que incrementelo a 4. Haga un informe donde presente el comportamiento de la CPU de las 4 VM y explique porque la tasa de éxito de las peticiones aumento con este estilo de escalabilidad.
+> Como podemos observar en peticiones aceptadas hay una gran diferencia ya que con el escalamiento vertical todas las peticiones realizadas fueron aceptadas,  mientras que en escalamiento horizontal algunas de estas fallaron.
+
+3. Agregue una 4 maquina virtual y realice las pruebas de newman, pero esta vez no lance 2 peticiones en paralelo, sino que incrementelo a 
+
+4. Haga un informe donde presente el comportamiento de la CPU de las 4 VM y explique porque la tasa de éxito de las peticiones aumento con este estilo de escalabilidad.
 
 ```
 newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
-newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
-newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10 &
-newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALANCING_AZURE].postman_environment.json -n 10
 ```
+
+![](./images/part2/parte2-4.png)
+![](./images/part2/parte2-5.png)
+![](./images/part2/parte2-6.png)
+![](./images/part2/parte2-7.png)
 
 **Preguntas**
 
@@ -370,6 +382,9 @@ newman run ARSW_LOAD-BALANCING_AZURE.postman_collection.json -e [ARSW_LOAD-BALAN
 > Utilizar un grupo de seguridad de red de Azure para filtrar el tráfico de red hacia y desde los recursos de Azure
 > en una red virtual de Azure
 * Informe de newman 1 (Punto 2)
+
+![](./images/part2/parte2-3.png)
+
 * Presente el Diagrama de Despliegue de la solución.
 
 > ![](./images/part2/diagrama.png)
